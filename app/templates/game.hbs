@@ -1,0 +1,12 @@
+{{#if gameOver}}
+    <div><button {{action "reset"}}>Game Over! Click Here to Play Again</button></div>
+{{else}}
+    <div>{{input type="text" pattern="[0-9]" value=controller.pinsToKnockDown}}</div>
+    {{#if errorMessage}}
+        <div>{{errorMessage}}</div>
+        {{else}}
+        <div><button {{action "roll" controller.pinsToKnockDown}}>Roll</button></div>
+    {{/if}}
+{{/if}}
+
+<h1>Score: {{controller.score}}</h1>
